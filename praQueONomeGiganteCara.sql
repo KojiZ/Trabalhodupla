@@ -35,13 +35,15 @@ CREATE TABLE `adm` (
   `cadastro` datetime DEFAULT current_timestamp(),
   `alteracao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`idadm`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `adm`
 --
 
 /*!40000 ALTER TABLE `adm` DISABLE KEYS */;
+INSERT INTO `adm` (`idadm`,`nome`,`email`,`senha`,`ativo`,`cadastro`,`alteracao`) VALUES 
+ (1,'Miguel Salmen','mii@gmail.com',' $2y$12$zsA6N.LbmjYIHCv4o6/hOe9mRAkiDehzARU42RgyTOpWoK1rL75CG','A','2024-04-04 16:21:12','2024-04-04 16:21:12');
 /*!40000 ALTER TABLE `adm` ENABLE KEYS */;
 
 
