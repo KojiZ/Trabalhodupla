@@ -1,5 +1,5 @@
-<?php
-
+<?php 
+include_once('config/connection.php');
 ?>
 <br>
 <br>
@@ -22,18 +22,33 @@
           </tr>
         </thead>
         <tbody>
-         
+          <?php
+          $conn = connection();
+          $select = $conn->prepare("SELECT idadm, nome, email, ativo FROM adm");
+          $conn->beginTransaction();
+          $select->execute();
+          $conn->commit();
+          foreach ($select as $table) {
+              $idadm = $table['idadm'];
+              $nome = $table['nome'];
+              $email = $table['email'];
+              $ativo = $table['ativo'];
+          
+          ?>
 
             <tr>
-              <th scope="row" style="width:5%"><?php   ?></th>
-              <td style="width:20%"><?php   ?></td>
-              <td style="width:15%"><?php   ?></td>
-              <td style="width:40%"><?php   ?></td>
+              <th scope="row" style="width:5%"><?php echo $idadm ?></th>
+              <td style="width:20%"><?php echo $nome ?></td>
+              <td style="width:15%"><?php echo $email ?></td>
+              <td style="width:40%"><?php echo $ativo ?></td>
               <td>
                 <div class="btn-group" role="group" aria-label="Basic outlined example">
-                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#seemore<?php ?>">Ver+</button>
-                  <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#V<?php ?>">Alterar</button>
-                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delcar<?php  ?>">Excluir</button>
+                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#seemoreadm<?php ?>">Ver+</button>
+                  <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#alteraradm<?php ?>">Alterar</button>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deladm<?php  ?>">Excluir</button>
                 </div>
+                <?php
+          }
+                ?>
               </td>
             </tr>

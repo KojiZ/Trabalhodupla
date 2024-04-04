@@ -1,5 +1,5 @@
 <?php
-
+include_once('config/connection.php');
 ?>
 <br>
 <br>
@@ -14,26 +14,40 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Email</th>
+            <th scope="col">Serviço</th>
             <th scope="col">Ativo</th>
             <th scope="col">Ações</th>
             <th scope="col"><button class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#cadastrarcarro">Cadastrar</button></th>
           </tr>
         </thead>
         <tbody>
-         
+        
+        <?php
+          $conn = connection();
+
+          $select = $conn->prepare("SELECT idservico, servico, ativo FROM servico");
+          $conn->beginTransaction();
+          $select->execute();
+          $conn->commit();
+          foreach ($select as $table) {
+              $idservico = $table['idservico'];
+              $servico = $table['servico'];
+              $ativo = $table['ativo'];
+          
+          ?>
 
             <tr>
-              <th scope="row" style="width:5%"><?php   ?></th>
-              <td style="width:20%"><?php   ?></td>
-              <td style="width:15%"><?php   ?></td>
-              <td style="width:40%"><?php   ?></td>
+              <th scope="row" style="width:5%"><?php echo $idservico ?></th>
+              <td style="width:20%"><?php echo $servico ?></td>
+              <td style="width:15%"><?php echo $ativo ?></td>
               <td>
                 <div class="btn-group" role="group" aria-label="Basic outlined example">
-                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#seemore<?php ?>">Ver+</button>
-                  <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#V<?php ?>">Alterar</button>
-                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delcar<?php  ?>">Excluir</button>
+                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#seemoreadm<?php ?>">Ver+</button>
+                  <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#alteraradm<?php ?>">Alterar</button>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deladm<?php  ?>">Excluir</button>
                 </div>
+                <?php
+          }
+                ?>
               </td>
             </tr>
