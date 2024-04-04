@@ -16,28 +16,28 @@
 
 <body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
 <div class="container text-center" style="margin-top:15%;">
-    <div class="card mx-auto" style="width: 50%; height: 440px;">
-        <h5 class="card-header text-success">Login</h5>
+    <div class="card mx-auto" style="width: 50%; height: 440px;border-color:green">
+        <h5 class="card-header text-success">LOGIN</h5>
         <div class="card-body">
             <form action="#">
                 <br>
                 <div class="mb-3 row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <label for="email" class="col-sm-2 col-form-label">EMAIL:</label>
                     <div class="col-sm-10">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu email">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="senha" class="col-sm-2 col-form-label">Senha</label>
+                    <label for="senha" class="col-sm-2 col-form-label">SENHA:</label>
                     <div class="col-sm-10">
                         <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
                     </div>
                 </div>
-                <div class="alert alert-primary d-none" role="alert" name="alert" id="alert">
+                <div class="alert alert-primary d-noe" role="alert" name="alert" id="alert">
                     A simple primary alert—check it out!
                 </div>
                 <br>
-                <button type="submit" class="btn btn-outline-success">Logar</button>
+                <button type="submit" class="btn btn-outline-success">LOGAR</button>
             </form>
         </div>
     </div>

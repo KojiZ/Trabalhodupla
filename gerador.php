@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +16,6 @@
 </head>
 
 <body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
-
 <a href="escolha.php" class="btn btn-danger">SAIR</a>
 
 
