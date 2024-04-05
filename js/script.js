@@ -47,7 +47,7 @@ function login() {
             if (data.success) {
                 console.log(data);
                 setTimeout(function () {
-                    window.location.href = "./dashboard.php";
+                    window.location.href = "./escolha.php";
                 }, 2000);
                 log.style.display = "block";
                 log.classList.remove("alert-danger");

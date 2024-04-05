@@ -33,3 +33,20 @@ if (isset($_POST['clienteselec'])) {
     $_SESSION['pagamentoselec'] = $pagamentoselec;
     header("Location: final.php");
 }
+
+
+if ( isset($_POST['nomecadadm'])) {
+    $conn = connection();
+    $nome = $_POST['nomecadadm'];
+    $email = $_POST['emailcadadm'];
+    $senha = $_POST['senhacadadm']; 
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+    $register = $conn->prepare("INSERT INTO adm (nome, email, senha) VALUES (:nome, :email, :senha)");
+    $register->bindParam(':nome', $nome);
+    $register->bindParam(':email', $email);
+    $register->bindParam(':senha', $senha_hash);
+    $register->execute();
+
+    header('Location: dashboard.php?page=adm');
+    exit; 
+}

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once('config/connection.php');
 ?>
 <br>
@@ -18,7 +18,7 @@ include_once('config/connection.php');
             <th scope="col">Email</th>
             <th scope="col">Ativo</th>
             <th scope="col">Ações</th>
-            <th scope="col"><button class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#cadastrarcarro">Cadastrar</button></th>
+            <th scope="col"><button class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#cadadm">Cadastrar</button></th>
           </tr>
         </thead>
         <tbody>
@@ -29,11 +29,11 @@ include_once('config/connection.php');
           $select->execute();
           $conn->commit();
           foreach ($select as $table) {
-              $idadm = $table['idadm'];
-              $nome = $table['nome'];
-              $email = $table['email'];
-              $ativo = $table['ativo'];
-          
+            $idadm = $table['idadm'];
+            $nome = $table['nome'];
+            $email = $table['email'];
+            $ativo = $table['ativo'];
+
           ?>
 
             <tr>
@@ -43,12 +43,66 @@ include_once('config/connection.php');
               <td style="width:40%"><?php echo $ativo ?></td>
               <td>
                 <div class="btn-group" role="group" aria-label="Basic outlined example">
-                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#seemoreadm<?php ?>">Ver+</button>
+                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#seemoreadm<?php echo $idadm ?>">Ver+</button>
                   <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#alteraradm<?php ?>">Alterar</button>
-                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deladm<?php  ?>">Excluir</button>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deladm<?php echo $idadm  ?>">Excluir</button>
                 </div>
-                <?php
-          }
-                ?>
+
+
+            <!-- Modal Excluir registro -->
+            <div class="modal fade" id="deladm<?php echo $idadm ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-danger">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registros</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-danger">
+                    <p>Você tem certeza que deseja excluir o ADM "<?php echo $nome ?>"?!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <a href="delete.php?idadm=<?php echo $idadm ?>" class="btn btn-danger">Excluir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <?php
+            }
+              ?>
               </td>
             </tr>
+
+
+            <!-- Modal CADASTRAR Adm -->
+            <div class="modal fade" id="cadadm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <form action="cadastro.php" method="post">
+                    <div class="modal-header bg-success text-white">
+                      <h5 class="modal-title" id="exampleModalLabel">Cadastrar Adm</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="nomecadadm" class="form-label">Nome:</label>
+                        <input type="text" class="form-control" id="nomecadadm" name="nomecadadm" placeholder="Informe o seu nome">
+                      </div>
+                      <div class="mb-3">
+                        <label for="emailcadadm" class="form-label">EMAIL:</label>
+                        <input type="text" class="form-control" id="emailcadadm" name="emailcadadm" placeholder="Informe o seu CPF">
+                      </div>
+                      <div class="mb-3">
+                        <label for="senhacadadm" class="form-label">SENHA:</label>
+                        <input type="password" class="form-control" id="senhacadadm" name="senhacadadm" placeholder="Informe a sua senha">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Cadastrar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>

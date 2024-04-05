@@ -16,7 +16,7 @@
 <body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
 <div id="tobias" class="fixed-top"></div>
 <div class="container text-center" style="margin-top:15%;">
-    <div class="card mx-auto" style="width: 50%; height: 350px;border-color:green">
+    <div class="card mx-auto" style="width: 50%; height: 450px;border-color:green">
         <h5 class="card-header text-success">LOGIN</h5>
         <div class="card-body">
             <form action="login.php" method="POST">
@@ -33,11 +33,12 @@
                         <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
                     </div>
                 </div>
+                <button type="button" class="btn btn-outline-success" onclick="login()">LOGAR</button>
+                <br>
+                <br>
                 <div class="alert alert-light" role="alert" name="log" id="log" style="display: none">
                     Bundinha
                 </div>
-                <br>
-                <button type="button" class="btn btn-outline-success" onclick="login()">LOGAR</button>
             </form>
         </div>
     </div>
