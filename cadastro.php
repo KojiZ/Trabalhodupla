@@ -24,5 +24,12 @@ if (isset($_POST['clienteselec'])) {
     $conn->beginTransaction();
     $register->execute();
     $conn->commit();
+    $_SESSION['idcliente'] = $idcliente;
+    $_SESSION['idservico'] = $idservico;
+    $_SESSION['idadm'] = $idadm;
+    $_SESSION['prazoEntrega'] = $prazoEntrega;
+    $_SESSION['valorContratado'] = $valorContratado;
+    $_SESSION['valorEntrada'] = $valorEntrada;
+    $_SESSION['pagamentoselec'] = $pagamentoselec;
     header("Location: final.php");
 }
