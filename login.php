@@ -1,4 +1,5 @@
 <?php
+
 include_once("./config/connection.php");
 $POST = filter_input_array(INPUT_POST);
 $email = $_POST['email'];

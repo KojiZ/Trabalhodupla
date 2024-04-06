@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,18 +18,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
+<body style="background-image: url('./img/aaq3.jpg');background-size: cover; ">
     <div class="container mx-auto" style="margin-top:20%">
         <div class="row">
-            <div class="col-12">
-                <center><a href="dashboard.php" class="btn btn-warning imgf" style="width:70%">Área Administrativa</a></center>
+            <div class="col-6">
+                <center><a href="dashboard.php" class="btn btn-warning imgf text-dark" style="width:80%;height:57px;font-size:30px;border-color:black">Área Administrativa</a></center>
             </div>
             <br>
             <br>
-            <div class="col-12">
-                <center><a href="gerador.php" class="btn btn-primary imgf" style="width:70%" >Gerador de Registros</a></center>
+            <div class="col-6">
+                <center><a href="gerador.php" class="btn btn-primary imgf text-dark" style="width:80%;height:57px;font-size:30px;border-color:black">Gerador de Registros</a></center>
             </div>
         </div>
     </div>

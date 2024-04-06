@@ -35,7 +35,7 @@ CREATE TABLE `adm` (
   `cadastro` datetime DEFAULT current_timestamp(),
   `alteracao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`idadm`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `adm`
@@ -43,7 +43,8 @@ CREATE TABLE `adm` (
 
 /*!40000 ALTER TABLE `adm` DISABLE KEYS */;
 INSERT INTO `adm` (`idadm`,`nome`,`email`,`senha`,`ativo`,`cadastro`,`alteracao`) VALUES 
- (1,'Miguel Salmen','mii@gmail.com',' $2y$12$zsA6N.LbmjYIHCv4o6/hOe9mRAkiDehzARU42RgyTOpWoK1rL75CG','A','2024-04-04 16:21:12','2024-04-04 16:21:12');
+ (1,'Miguel Salmen','mii@gmail.com',' $2y$12$zsA6N.LbmjYIHCv4o6/hOe9mRAkiDehzARU42RgyTOpWoK1rL75CG','A','2024-04-04 16:21:12','2024-04-04 16:21:12'),
+ (2,'Koji','Koji@gmail.com','$2y$10$XtF0YIWgg0IJI2f2Utp7je9QGsabTq5HtCRH/l2OqIM/8vfpC41Hm','A','2024-04-05 22:51:06','2024-04-05 22:51:06');
 /*!40000 ALTER TABLE `adm` ENABLE KEYS */;
 
 
@@ -61,7 +62,7 @@ CREATE TABLE `cliente` (
   `cadastro` datetime DEFAULT current_timestamp(),
   `alteracao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`idcliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cliente`
@@ -69,7 +70,10 @@ CREATE TABLE `cliente` (
 
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 INSERT INTO `cliente` (`idcliente`,`nome`,`sexo`,`cpf`,`ativo`,`cadastro`,`alteracao`) VALUES 
- (1,'Franciele Telles','Feminino','111.111.111-11','A','2024-04-04 20:22:33','2024-04-04 20:22:34');
+ (1,'Franciele Telles','Feminino','111.111.111-11','A','2024-04-04 20:22:33','2024-04-04 20:22:34'),
+ (2,'Miguel Salmen','Masculino','222.222.222-22','A','2024-04-05 22:51:30','2024-04-05 22:51:30'),
+ (3,'Rebeka','Feminino','333.333.333-33','A','2024-04-05 22:51:42','2024-04-05 22:51:42'),
+ (4,'Luciano Pettersen','Masculino','444.444.444-44','A','2024-04-05 22:51:57','2024-04-05 22:51:57');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 
@@ -146,7 +150,7 @@ CREATE TABLE `servico` (
   `cadastro` datetime DEFAULT current_timestamp(),
   `alteracao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`idservico`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `servico`
@@ -154,7 +158,13 @@ CREATE TABLE `servico` (
 
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
 INSERT INTO `servico` (`idservico`,`servico`,`ativo`,`cadastro`,`alteracao`) VALUES 
- (1,'Desenvolvimento de Sistemas','A','2024-04-04 20:24:00','2024-04-04 20:24:00');
+ (1,'Desenvolvimento de Sistemas','A','2024-04-04 20:24:00','2024-04-04 20:24:00'),
+ (2,'Pedreiro','A','2024-04-05 22:55:09','2024-04-05 22:55:09'),
+ (3,'Carpinteiro','A','2024-04-05 22:55:16','2024-04-05 22:55:16'),
+ (4,'Médico Legista','A','2024-04-05 22:55:26','2024-04-05 22:55:26'),
+ (5,'Marceneiro','A','2024-04-05 22:55:37','2024-04-05 22:55:37'),
+ (6,'Investigador Criminal','A','2024-04-05 22:55:51','2024-04-05 22:55:51'),
+ (7,'Perito Forense','A','2024-04-05 22:56:01','2024-04-05 22:56:01');
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 
 

@@ -50,3 +50,31 @@ if ( isset($_POST['nomecadadm'])) {
     header('Location: dashboard.php?page=adm');
     exit; 
 }
+
+if ( isset($_POST['nomecadcli'])) {
+    $conn = connection();
+    $nome = $_POST['nomecadcli'];
+    $sexo = $_POST['sexocadcli'];
+    $cpf = $_POST['cpfcadcli']; 
+    $register = $conn->prepare("INSERT INTO cliente (nome, sexo, cpf) VALUES (:nome, :sexo, :cpf)");
+    $register->bindParam(':nome', $nome);
+    $register->bindParam(':sexo', $sexo);
+    $register->bindParam(':cpf', $cpf);
+    $register->execute();
+
+    header('Location: dashboard.php?page=cliente');
+    exit; 
+}
+
+
+if ( isset($_POST['sercad'])) {
+    $conn = connection();
+    $servico = $_POST['sercad'];
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+    $register = $conn->prepare("INSERT INTO servico (servico) VALUES (:servico)");
+    $register->bindParam(':servico', $servico);
+    $register->execute();
+
+    header('Location: dashboard.php?page=servico');
+    exit; 
+}

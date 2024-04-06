@@ -12,9 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
+<body style="background-image: url('./img/Designsemnome.png');background-size: cover; ">
     <nav class="navbar bg-body-tertiary ">
         <div class="container-fluid">
             <a href="escolha.php" class="btn btn-danger">SAIR</a>
@@ -67,7 +70,7 @@
                 include_once('tbservico.php');
             }
         }else{
-            echo "<center><h1 class='mt-5'>Bem Vindo!!!</h1></center>";
+            echo "<center><h1 class='mt-5 text-white'>Bem Vindo!!!</h1></center>";
         };
        
         

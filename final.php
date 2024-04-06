@@ -61,19 +61,26 @@ if (isset($_SESSION['idadm'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
+<body style="background-image: url('./img/aaq3.jpg');background-size: cover; ">
     <div class="container-fluid">
         <div class="row">
             <div class="col-11"></div>
-            <div class="col-1 mt-3"><a href="escolha.php" class="btn btn-danger">SAIR</a></div>
+            <div class="col-1 mt-3"><a href="exSession.php" class="btn btn-danger">SAIR</a></div>
         </div>
     </div>
     <div class="container">
-        <div class="card mt-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="card mt-5" style="border-color: green;">
             <center>
-                <div class="card-header">
+                <div class="card-header bg-success text-white">
                     Informações de compra
                 </div>
             </center>

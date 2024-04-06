@@ -1,7 +1,12 @@
 <?php
+session_start();
 include_once('config/connection.php');
 
+
+$adm = $_SESSION['idadm'];
+
 $conn = connection();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,9 +22,12 @@ $conn = connection();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body style="background-image: url('./img/2_afcas12.jpg');background-size: cover; ">
+<body style="background-image: url('./img/Designsemnome.png');background-size: cover; ">
     <div class="container-fluid">
         <div class="row">
             <div class="col-11"></div>
@@ -88,19 +96,19 @@ $conn = connection();
                                 <input type="date" class="form-control" id="prazoEntrega" name="prazoEntrega" required="required">
                             </div>
                         </div>
-                        <input type="number" class="form-control d-none" id="idadmselec" name="idadmselec" value="1">
+                        <input type="number" class="form-control d-none" id="idadmselec" name="idadmselec" value="<?php echo $adm;  ?>">
                         <div class="col-md-6 sm-1 mt-5">
                             <label for="contratoselec" class="form-label">VALOR DO CONTRATO</label>
                             <div class="input-group">
                                 <span class="input-group-text">R$</span>
-                                <input type="text" class="form-control" id="contratoselec" name="contratoselec" placeholder="0.00" required="required">
+                                <input type="number" class="form-control" id="contratoselec" name="contratoselec" placeholder="0.00" required="required">
                             </div>
                         </div>
                         <div class="col-md-6 sm-1 mt-5">
                             <label for="entradaselec" class="form-label">VALOR DE ENTRADA</label>
                             <div class="input-group">
                                 <span class="input-group-text">R$</span>
-                                <input type="text" class="form-control" id="entradaselec" name="entradaselec" placeholder="0.00" required="required">
+                                <input type="number" class="form-control" id="entradaselec" name="entradaselec" placeholder="0.00" required="required">
                             </div>
                         </div>
                         <div class="col-md-6 sm-1 mt-5">
